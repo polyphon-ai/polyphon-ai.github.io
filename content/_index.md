@@ -3,8 +3,6 @@ title: "Polyphon"
 description: "Desktop app for orchestrating conversations between multiple AI voices simultaneously. One chat. Many voices."
 ---
 
-## What is Polyphon?
-
 Polyphon is a desktop application for orchestrating conversations between multiple AI voices simultaneously. You send a message — and every voice responds. Voices can read each other's replies and build on them, creating a genuine multi-agent dialogue.
 
 The name comes from *polyphony* — many voices in harmony. You are the conductor. The AI models are the ensemble.
