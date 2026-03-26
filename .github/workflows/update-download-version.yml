@@ -7,10 +7,6 @@ on:
         description: "Stable app version (semver, e.g. 0.11.0)"
         required: true
         type: string
-      release_notes:
-        description: "Release notes for the blog post (optional, markdown)"
-        required: false
-        type: string
 
 permissions:
   contents: write
@@ -36,6 +32,14 @@ jobs:
           fi
           echo "VERSION=${VERSION}" >> "$GITHUB_ENV"
 
+      - name: Fetch release notes from polyphon repo
+        run: |
+          NOTES="$(gh release view "v${VERSION}" --repo polyphon-ai/polyphon --json body --jq '.body')"
+          # Write to a temp file to safely handle multiline content
+          printf '%s' "$NOTES" > /tmp/release-notes.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Update downloadVersion in hugo.yaml
         run: |
           sed -i "s/downloadVersion: .*/downloadVersion: \"${VERSION}\"/" hugo.yaml
@@ -47,7 +51,7 @@ jobs:
           POST_DIR="content/blog/${SLUG}"
           mkdir -p "$POST_DIR"
 
-          NOTES="${{ github.event.inputs.release_notes }}"
+          NOTES="$(cat /tmp/release-notes.md)"
 
           cat > "$POST_DIR/index.md" <<EOF
           ---
@@ -58,8 +62,6 @@ jobs:
           tags: ["release", "announcement"]
           categories: ["Announcements"]
           ---
-
-          Polyphon v${VERSION} is now available.
 
           ${NOTES}
 
