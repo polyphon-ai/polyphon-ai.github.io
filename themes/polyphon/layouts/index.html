@@ -681,33 +681,32 @@
 <!-- Integrations -->
 <section class="integrations" aria-label="Integrations">
   <div class="container">
-    <div class="integrations-heading">
-      <h2>Polyphon, wherever you work</h2>
-      <p>Bring multi-voice AI into the tools you already use.</p>
-    </div>
-    <div class="integrations-grid">
-
-      <div class="integration-card card-base">
-        <div class="integration-card-identity">
-          <div class="integration-icon" aria-hidden="true">
-            {{- partial "provider-logo.html" (dict "name" "obsidian" "size" 24) -}}
-          </div>
-          <div>
-            <div class="integration-card-title-row">
-              <h3 class="integration-name">Obsidian</h3>
-              <span class="integration-install-badge">Manual install</span>
-            </div>
-            <p class="integration-card-sub">Obsidian plugin</p>
-          </div>
-        </div>
-        <p class="integration-desc">Connect to a running Polyphon instance and have multi-voice AI conversations from within your vault. Install via GitHub releases or BRAT — not yet listed in the Obsidian community plugin directory.</p>
-        <a href="/docs/integrations/obsidian-polyphon/" class="download-docs-link">
-          {{ partial "icon.html" (dict "name" "book-open" "size" 14) }}
-          <span>Get started with the Obsidian plugin</span>
-          {{ partial "icon.html" (dict "name" "chevron-right" "size" 14) }}
-        </a>
+    <div class="integrations-header">
+      <div class="integrations-header-left">
+        <p class="integrations-eyebrow">Integrations</p>
+        <h2 class="integrations-heading">Polyphon,<br>wherever you work</h2>
       </div>
+      <p class="integrations-header-right">Bring multi-voice AI into the tools you already use. Polyphon exposes a full TCP API — any tool that can open a socket can connect.</p>
+    </div>
 
+    <div class="integrations-rail">
+      <a class="integration-plug" href="/docs/integrations/obsidian-polyphon/" style="--plug-color: var(--integration-obsidian); --plug-subtle: var(--integration-obsidian-subtle)">
+        <div class="integration-plug-icon" aria-hidden="true">
+          {{- partial "provider-logo.html" (dict "name" "obsidian" "size" 28) -}}
+        </div>
+        <div class="integration-plug-body">
+          <div class="integration-plug-meta">
+            <span class="integration-plug-name">Obsidian</span>
+            <span class="integration-plug-type">Plugin</span>
+            <span class="integration-plug-badge">Manual install</span>
+          </div>
+          <p class="integration-plug-desc">Multi-voice AI conversations from within your vault. Connect to a running Polyphon instance and chat with any composition — no browser, no switching apps.</p>
+        </div>
+        <div class="integration-plug-cta" aria-hidden="true">
+          <span>Docs</span>
+          {{ partial "icon.html" (dict "name" "arrow-right" "size" 15) }}
+        </div>
+      </a>
     </div>
   </div>
 </section>
