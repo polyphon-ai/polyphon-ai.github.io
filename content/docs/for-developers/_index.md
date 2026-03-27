@@ -1,6 +1,6 @@
 ---
 title: "For Developers"
 weight: 30
-description: "Protocol-level interfaces for building on top of Polyphon — MCP server and TCP API."
-redirect_to: /docs/for-developers/mcp/
+description: "Build on top of Polyphon — JavaScript SDK, MCP server, and TCP API."
+redirect_to: /docs/for-developers/sdk/
 ---
