@@ -70,6 +70,16 @@ items:
 
   # ── Released ───────────────────────────────────────────────
 
+  - title: "JavaScript / TypeScript SDK"
+    status: released
+    release_date: 2026-03-27
+    description: "A first-class SDK (@polyphon-ai/js) for connecting to Polyphon from Node.js or any bundler-based project. Manage compositions and sessions, broadcast messages to the full ensemble, and stream voice responses — all over the local TCP API. Published to npm and versioned in sync with the app."
+
+  - title: "Obsidian Plugin"
+    status: released
+    release_date: 2026-03-27
+    description: "Bring multi-voice AI conversations into your Obsidian vault. The plugin connects to a running Polyphon instance over the local TCP API, lets you pick a composition, manage sessions, and chat with your ensemble without leaving your notes. Supports @mention routing and automatic session context from your open file."
+
   - title: "Auto Update"
     status: released
     description: "Polyphon checks for new releases in the background and notifies you when one is available. Install with one click — no manual download required."
