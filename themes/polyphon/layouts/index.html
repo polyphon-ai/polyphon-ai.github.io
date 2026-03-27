@@ -466,6 +466,67 @@
   </div>
 </section>
 
+<!-- SDK callout -->
+<section class="sdk-callout" aria-label="JavaScript SDK">
+  <div class="container">
+    <div class="sdk-callout-inner">
+
+      <div class="sdk-callout-copy">
+        <div class="sdk-callout-eyebrow">
+          {{ partial "icon.html" (dict "name" "package" "size" 13) }}
+          <span>@polyphon-ai/js</span>
+        </div>
+        <h2 class="sdk-callout-heading">Polyphon is scriptable.<br>Here's the SDK.</h2>
+        <p class="sdk-callout-sub">A TypeScript-first client for the TCP API. Automate sessions, stream voice tokens, and build integrations without touching the UI.</p>
+        <ul class="sdk-callout-features" role="list">
+          <li>{{ partial "icon.html" (dict "name" "check" "size" 14) }}<span>Full TypeScript types for every method</span></li>
+          <li>{{ partial "icon.html" (dict "name" "check" "size" 14) }}<span>Streaming token callbacks</span></li>
+          <li>{{ partial "icon.html" (dict "name" "check" "size" 14) }}<span>MockPolyphonServer for testing without a live app</span></li>
+          <li>{{ partial "icon.html" (dict "name" "check" "size" 14) }}<span>Auto-synced and published on every release</span></li>
+        </ul>
+        <div class="sdk-callout-actions">
+          <span class="sdk-install-pill">
+            {{ partial "icon.html" (dict "name" "terminal" "size" 13) }}
+            npm install @polyphon-ai/js
+          </span>
+          <a href="/docs/for-developers/sdk/" class="sdk-callout-link">
+            SDK docs
+            {{ partial "icon.html" (dict "name" "arrow-right" "size" 14) }}
+          </a>
+        </div>
+      </div>
+
+      <div class="sdk-callout-code" aria-hidden="true">
+        <div class="sdk-code-window">
+          <div class="sdk-code-titlebar">
+            <div class="sdk-code-dots"><span></span><span></span><span></span></div>
+            <span class="sdk-code-filename">broadcast.ts</span>
+          </div>
+          <pre class="sdk-code-pre"><code><span class="sdk-k">import</span> { PolyphonClient, readLocalToken }
+  <span class="sdk-k">from</span> <span class="sdk-s">'@polyphon-ai/js'</span>;
+
+<span class="sdk-k">const</span> client = <span class="sdk-k">new</span> PolyphonClient({
+  token: readLocalToken(),
+});
+<span class="sdk-k">await</span> client.connect();
+
+<span class="sdk-k">const</span> [comp] = <span class="sdk-k">await</span> client.compositions();
+<span class="sdk-k">const</span> session = <span class="sdk-k">await</span> client
+  .createSession(comp.id, <span class="sdk-s">'script'</span>);
+
+<span class="sdk-k">await</span> client.broadcast(
+  { sessionId: session.id,
+    message: <span class="sdk-s">'Hello, ensemble.'</span> },
+  ({ token }) =>
+    process.stdout.write(token),
+);</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- Open source callout -->
 <section class="opensource-callout" aria-label="Open source">
   <div class="container">

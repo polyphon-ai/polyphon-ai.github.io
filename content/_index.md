@@ -76,18 +76,6 @@ Your conversations and API keys stay on your machine. Polyphon never phones home
 
 ---
 
-## Build on Polyphon
-
-Control Polyphon from your own scripts and applications using the official **JavaScript SDK** or the **TCP API** directly. Automate sessions, stream voice responses into other tools, or build integrations on top of the conversation engine.
-
-```bash
-npm install @polyphon-ai/js
-```
-
-[Explore developer docs →](/docs/for-developers/)
-
----
-
 ## Get Started
 
 Head to the [documentation](/docs/) to learn how to install Polyphon, configure your first voices, and start your first session.
