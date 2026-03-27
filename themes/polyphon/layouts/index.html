@@ -635,37 +635,38 @@
         </a>
       </div>
 
-    </div>
 
-    <!-- poly CLI callout -->
-    <div class="download-card card-base poly-callout">
-      <div class="download-card-platform">
-        <div class="download-platform-icon" aria-hidden="true">
-          {{ partial "icon.html" (dict "name" "terminal" "size" 28) }}
+      <!-- poly CLI -->
+      <div class="download-card card-base poly-callout">
+        <div class="download-card-platform">
+          <div class="download-platform-icon" aria-hidden="true">
+            {{ partial "icon.html" (dict "name" "terminal" "size" 28) }}
+          </div>
+          <div>
+            <h3 class="download-platform-name">poly CLI</h3>
+            <p class="download-platform-sub">
+              npm
+              <span class="download-platform-sub-sep" aria-hidden="true">·</span>
+              @polyphon-ai/poly
+            </p>
+          </div>
         </div>
-        <div>
-          <h3 class="download-platform-name">poly CLI</h3>
-          <p class="download-platform-sub">
-            npm
-            <span class="download-platform-sub-sep" aria-hidden="true">·</span>
-            @polyphon-ai/poly
-          </p>
+        <div class="download-files">
+          <div class="download-file-btn poly-install-cmd">
+            {{ partial "icon.html" (dict "name" "terminal" "size" 14) }}
+            <span class="download-file-info">
+              <span class="download-filename">npm install -g @polyphon-ai/poly</span>
+              <span class="download-arch">Control Polyphon from the terminal or CI</span>
+            </span>
+          </div>
         </div>
+        <a class="download-docs-link" href="/docs/polyphon/poly/">
+          {{ partial "icon.html" (dict "name" "book-open" "size" 14) }}
+          <span>New to poly? Read the CLI documentation</span>
+          {{ partial "icon.html" (dict "name" "chevron-right" "size" 14) }}
+        </a>
       </div>
-      <div class="download-files">
-        <div class="download-file-btn poly-install-cmd">
-          {{ partial "icon.html" (dict "name" "terminal" "size" 14) }}
-          <span class="download-file-info">
-            <span class="download-filename">npm install -g @polyphon-ai/poly</span>
-            <span class="download-arch">Control Polyphon from the terminal or CI</span>
-          </span>
-        </div>
-      </div>
-      <a class="download-docs-link" href="/docs/poly/">
-        {{ partial "icon.html" (dict "name" "book-open" "size" 14) }}
-        <span>New to poly? Read the CLI documentation</span>
-        {{ partial "icon.html" (dict "name" "chevron-right" "size" 14) }}
-      </a>
+
     </div>
 
     {{ else }}
@@ -674,6 +675,40 @@
     </div>
     {{ end }}
 
+  </div>
+</section>
+
+<!-- Integrations -->
+<section class="integrations" aria-label="Integrations">
+  <div class="container">
+    <div class="integrations-heading">
+      <h2>Polyphon, wherever you work</h2>
+      <p>Bring multi-voice AI into the tools you already use.</p>
+    </div>
+    <div class="integrations-grid">
+
+      <div class="integration-card card-base">
+        <div class="integration-card-identity">
+          <div class="integration-icon" aria-hidden="true">
+            {{- partial "provider-logo.html" (dict "name" "obsidian" "size" 24) -}}
+          </div>
+          <div>
+            <div class="integration-card-title-row">
+              <h3 class="integration-name">Obsidian</h3>
+              <span class="integration-install-badge">Manual install</span>
+            </div>
+            <p class="integration-card-sub">Obsidian plugin</p>
+          </div>
+        </div>
+        <p class="integration-desc">Connect to a running Polyphon instance and have multi-voice AI conversations from within your vault. Install via GitHub releases or BRAT — not yet listed in the Obsidian community plugin directory.</p>
+        <a href="/docs/integrations/obsidian-polyphon/" class="download-docs-link">
+          {{ partial "icon.html" (dict "name" "book-open" "size" 14) }}
+          <span>Get started with the Obsidian plugin</span>
+          {{ partial "icon.html" (dict "name" "chevron-right" "size" 14) }}
+        </a>
+      </div>
+
+    </div>
   </div>
 </section>
 
