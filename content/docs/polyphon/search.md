@@ -2,6 +2,7 @@
 title: "Search"
 weight: 92
 description: "Search across all sessions with global full text search, or use per-session Cmd+F to find and jump to messages inline."
+aliases: ["/docs/search/"]
 ---
 
 Polyphon has two complementary search modes: **global search** lets you find messages across every session, and **per-session search** (Cmd+F) highlights matches inline in the conversation you have open.

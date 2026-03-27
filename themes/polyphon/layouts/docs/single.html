@@ -14,7 +14,16 @@
     </button>
 
     <h1 data-pagefind-meta="title:{{ .Title }}">{{ .Title }}</h1>
-    <span data-pagefind-meta="section:Docs" style="display:none"></span>
+    {{- $sectionName := "Docs" -}}
+    {{- $p := .File.Path -}}
+    {{- if hasPrefix $p "docs/polyphon/" -}}
+      {{- $sectionName = "Polyphon" -}}
+    {{- else if hasPrefix $p "docs/integrations/" -}}
+      {{- $sectionName = "Integrations" -}}
+    {{- else if hasPrefix $p "docs/for-developers/" -}}
+      {{- $sectionName = "For developers" -}}
+    {{- end -}}
+    <span data-pagefind-meta="section:{{ $sectionName }}" style="display:none"></span>
     <article data-pagefind-body class="prose">
       {{ .Content }}
     </article>
@@ -39,17 +48,12 @@
         {{ partial "icon.html" (dict "name" "x" "size" 16) }}
       </button>
     </div>
-    {{ $docsSection := .Site.GetPage "section" "docs" }}
-    {{ $currentPage := . }}
-    {{ range $docsSection.Pages.ByWeight }}
-    <a href="{{ .RelPermalink }}"{{ if eq $currentPage.RelPermalink .RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a>
-    {{ end }}
+    {{ partial "docs-sidebar.html" . }}
   </div>
 </div>
 
 <script>
 (function() {
-  // ── Mobile drawer ──────────────────────────────────────────────────────────
   var btn = document.getElementById('docs-drawer-btn');
   var overlay = document.getElementById('docs-sidebar-overlay');
   var close = document.getElementById('docs-sidebar-close');
@@ -64,7 +68,6 @@
       document.addEventListener('keydown', handleEscape);
       trapFocus(drawer);
     }
-
     function closeDrawer() {
       overlay.classList.remove('open');
       btn.setAttribute('aria-expanded', 'false');
@@ -72,54 +75,32 @@
       document.removeEventListener('keydown', handleEscape);
       removeTrap();
     }
-
-    function handleEscape(e) {
-      if (e.key === 'Escape') closeDrawer();
-    }
-
+    function handleEscape(e) { if (e.key === 'Escape') closeDrawer(); }
     var trapCleanup = null;
-
     function trapFocus(el) {
       var focusable = el.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
-      var first = focusable[0];
-      var last = focusable[focusable.length - 1];
+      var first = focusable[0], last = focusable[focusable.length - 1];
       function onKey(e) {
         if (e.key !== 'Tab') return;
-        if (e.shiftKey) {
-          if (document.activeElement === first) { e.preventDefault(); last.focus(); }
-        } else {
-          if (document.activeElement === last) { e.preventDefault(); first.focus(); }
-        }
+        if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+        else { if (document.activeElement === last) { e.preventDefault(); first.focus(); } }
       }
       el.addEventListener('keydown', onKey);
       trapCleanup = function() { el.removeEventListener('keydown', onKey); };
     }
-
-    function removeTrap() {
-      if (trapCleanup) { trapCleanup(); trapCleanup = null; }
-    }
-
+    function removeTrap() { if (trapCleanup) { trapCleanup(); trapCleanup = null; } }
     btn.addEventListener('click', openDrawer);
     close.addEventListener('click', closeDrawer);
     backdrop.addEventListener('click', closeDrawer);
   }
 
-  // ── On this page ToC ───────────────────────────────────────────────────────
+  // On this page ToC
   var article = document.querySelector('[data-pagefind-body]');
   var tocAside = document.getElementById('docs-toc-aside');
   var tocList = document.getElementById('docs-toc-list');
-
   if (!article || !tocAside || !tocList) return;
-
   var headings = Array.from(article.querySelectorAll('h2, h3'));
-
-  // Hide ToC for short pages
-  if (headings.length < 3) {
-    tocAside.style.display = 'none';
-    return;
-  }
-
-  // Build ToC links
+  if (headings.length < 3) { tocAside.style.display = 'none'; return; }
   headings.forEach(function(h) {
     var li = document.createElement('li');
     li.className = 'docs-toc-item docs-toc-' + h.tagName.toLowerCase();
@@ -130,28 +111,18 @@
     li.appendChild(a);
     tocList.appendChild(li);
   });
-
   var links = tocList.querySelectorAll('.docs-toc-link');
-
-  // Scroll spy: activate the link whose heading is closest above the viewport top
   function updateActive() {
-    var scrollY = window.scrollY;
-    var navOffset = 80; // approx nav height + breathing room
-    var activeId = null;
-
+    var scrollY = window.scrollY, navOffset = 80, activeId = null;
     for (var i = headings.length - 1; i >= 0; i--) {
       if (headings[i].getBoundingClientRect().top + scrollY - navOffset <= scrollY) {
-        activeId = headings[i].id;
-        break;
+        activeId = headings[i].id; break;
       }
     }
-
     links.forEach(function(link) {
-      var isActive = activeId && link.getAttribute('href') === '#' + activeId;
-      link.classList.toggle('active', !!isActive);
+      link.classList.toggle('active', !!(activeId && link.getAttribute('href') === '#' + activeId));
     });
   }
-
   window.addEventListener('scroll', updateActive, { passive: true });
   updateActive();
 })();

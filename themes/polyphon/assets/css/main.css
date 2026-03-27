@@ -1998,13 +1998,13 @@ a:hover {
   display: block;
   color: var(--color-text-secondary);
   text-decoration: none;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  padding: 0.4375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 0.3125rem 0.75rem 0.3125rem 1.25rem;
   border-radius: var(--radius-sm);
   border-left: 3px solid transparent;
   transition: color 0.1s, background 0.1s, border-color 0.1s;
-  margin-bottom: 0.125rem;
+  margin-bottom: 0;
 }
 
 .docs-sidebar-nav a:hover {
@@ -2025,13 +2025,48 @@ a:hover {
 }
 
 .docs-sidebar-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: 1rem 0.75rem 0.375rem;
+  margin-bottom: 0;
+}
+
+.docs-sidebar-label:first-child {
+  padding-top: 0.25rem;
+}
+
+.docs-sidebar-divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 0.75rem 0.75rem;
+}
+
+.docs-sidebar-section-active {
+  color: var(--color-brand) !important;
+  background: var(--color-brand-light) !important;
+  border-left-color: var(--color-brand) !important;
+  font-weight: 600 !important;
+}
+
+.dark .docs-sidebar-section-active {
+  background: oklch(20% 0.06 264) !important;
+}
+
+.docs-index-section-label {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-  padding: 0 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  margin-top: 2rem;
+}
+
+.docs-index-section-label:first-of-type {
+  margin-top: 0;
 }
 
 /* Mobile docs sidebar drawer */
@@ -2663,8 +2698,8 @@ a:hover {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-  padding: 0 1.5rem;
-  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 0.25rem;
 }
 
 .blog-sidebar-label--gap {

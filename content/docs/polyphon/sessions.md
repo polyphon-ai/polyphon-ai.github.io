@@ -2,6 +2,7 @@
 title: "Sessions"
 weight: 90
 description: "Start a session, send messages in broadcast or conductor-directed mode, continue multi-round conversations, and manage session history in Polyphon."
+aliases: ["/docs/sessions/"]
 ---
 
 A **session** is a live conversation with one or more voices. This page covers how to start, use, and manage sessions.

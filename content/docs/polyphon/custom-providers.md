@@ -2,6 +2,7 @@
 title: "Custom Providers"
 weight: 75
 description: "Add OpenAI-compatible endpoints like Ollama, LM Studio, or vLLM as custom voice providers in Polyphon."
+aliases: ["/docs/custom-providers/"]
 ---
 
 A **custom provider** is a user-defined voice endpoint that speaks the OpenAI API protocol. Any service that exposes an OpenAI-compatible API — Ollama, LM Studio, vLLM, or a private proxy — can be added as a custom provider and used in compositions alongside built-in providers.

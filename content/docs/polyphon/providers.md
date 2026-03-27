@@ -2,6 +2,7 @@
 title: "Voice Providers"
 weight: 70
 description: "Configure API keys for Anthropic, OpenAI, and Google Gemini, or set up CLI-based voice providers like claude and codex."
+aliases: ["/docs/providers/"]
 ---
 
 Polyphon supports two categories of voice providers: **API voices** that communicate with a remote model using an API key, and **CLI voices** that spawn a local command-line tool as a subprocess.

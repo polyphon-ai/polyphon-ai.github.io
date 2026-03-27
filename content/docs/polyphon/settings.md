@@ -2,6 +2,7 @@
 title: "Settings"
 weight: 30
 description: "Configure voice providers, manage tones and system prompt templates, set up your Conductor Profile, and view app info in Polyphon."
+aliases: ["/docs/settings/"]
 ---
 
 The Settings page lets you configure voice providers, manage tones and system prompt templates, set up your Conductor Profile, and view app information. Open it by clicking the **gear icon** in the bottom-left corner of the main window.

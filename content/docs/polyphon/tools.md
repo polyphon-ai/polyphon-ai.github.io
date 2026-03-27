@@ -2,6 +2,7 @@
 title: "Filesystem Tools"
 weight: 85
 description: "Give API voices access to host-brokered file operations, command execution, and URL fetching — with optional sandboxing to the session working directory."
+aliases: ["/docs/tools/"]
 ---
 
 **Filesystem tools** are host-brokered capabilities you can grant to API voices. When a voice has tools enabled, it can request file reads, writes, directory listings, command execution, and URL fetches during the course of a conversation. Polyphon intercepts the request, executes the operation on your machine, and returns the result to the voice — the voice never has direct access to your filesystem.

@@ -1,8 +1,79 @@
-{{ $docsSection := .Site.GetPage "section" "docs" }}
-{{ $currentPage := . }}
+{{ $current := . }}
+
+{{/* Determine which docs subsection the current page belongs to by inspecting its path */}}
+{{ $activeSection := "" }}
+{{ $path := $current.File.Path }}
+{{ if hasPrefix $path "docs/polyphon/" }}{{ $activeSection = "polyphon" }}
+{{ else if hasPrefix $path "docs/integrations/obsidian-polyphon/" }}{{ $activeSection = "obsidian-polyphon" }}
+{{ else if hasPrefix $path "docs/integrations/" }}{{ $activeSection = "integrations" }}
+{{ else if hasPrefix $path "docs/for-developers/" }}{{ $activeSection = "for-developers" }}
+{{ end }}
+
+{{ $polyphonSection     := .Site.GetPage "section" "docs/polyphon" }}
+{{ $integrationsSection := .Site.GetPage "section" "docs/integrations" }}
+{{ $devSection          := .Site.GetPage "section" "docs/for-developers" }}
+
 <nav class="docs-sidebar-nav" aria-label="Documentation">
-  <p class="docs-sidebar-label">Documentation</p>
-  {{ range $docsSection.Pages.ByWeight }}
-  <a href="{{ .RelPermalink }}"{{ if eq $currentPage.RelPermalink .RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a>
+
+  {{/* ── Polyphon ── */}}
+  <p class="docs-sidebar-label">Polyphon</p>
+  {{ if $polyphonSection }}
+  <a href="{{ $polyphonSection.RelPermalink }}"
+    {{ if eq $activeSection "polyphon" }}class="docs-sidebar-section-active"{{ end }}>
+    Desktop app
+  </a>
   {{ end }}
+
+  {{/* ── Integrations ── */}}
+  <p class="docs-sidebar-label">Integrations</p>
+  {{ if $integrationsSection }}
+    {{ range $integrationsSection.Sections.ByWeight }}
+    <a href="{{ .RelPermalink }}"
+      {{ if eq $current.RelPermalink .RelPermalink }} aria-current="page"{{ end }}>
+      {{ .Title }}
+    </a>
+    {{ end }}
+  {{ end }}
+
+  {{/* ── For developers ── */}}
+  <p class="docs-sidebar-label">For developers</p>
+  {{ if $devSection }}
+    {{ range $devSection.Pages.ByWeight }}
+    <a href="{{ .RelPermalink }}"
+      {{ if eq $current.RelPermalink .RelPermalink }} aria-current="page"{{ end }}>
+      {{ .Title }}
+    </a>
+    {{ end }}
+  {{ end }}
+
+  {{/* ── Context-sensitive section pages (polyphon and integrations only) ── */}}
+  {{ if or (eq $activeSection "polyphon") (eq $activeSection "obsidian-polyphon") }}
+  <hr class="docs-sidebar-divider" />
+  {{ end }}
+
+  {{ if eq $activeSection "polyphon" }}
+  <p class="docs-sidebar-label">Desktop app</p>
+  {{ if $polyphonSection }}
+    {{ range $polyphonSection.Pages.ByWeight }}
+    <a href="{{ .RelPermalink }}"
+      {{ if eq $current.RelPermalink .RelPermalink }} aria-current="page"{{ end }}>
+      {{ .Title }}
+    </a>
+    {{ end }}
+  {{ end }}
+  {{ end }}
+
+  {{ if eq $activeSection "obsidian-polyphon" }}
+  {{ $obsidianSection := .Site.GetPage "section" "docs/integrations/obsidian-polyphon" }}
+  {{ if $obsidianSection }}
+  <p class="docs-sidebar-label">Obsidian plugin</p>
+    {{ range $obsidianSection.Pages.ByWeight }}
+    <a href="{{ .RelPermalink }}"
+      {{ if eq $current.RelPermalink .RelPermalink }} aria-current="page"{{ end }}>
+      {{ .Title }}
+    </a>
+    {{ end }}
+  {{ end }}
+  {{ end }}
+
 </nav>

@@ -2,6 +2,7 @@
 title: "System Prompt Templates"
 weight: 60
 description: "Save and reuse system prompts across voices and compositions with system prompt templates in Polyphon."
+aliases: ["/docs/system-prompt-templates/"]
 ---
 
 A **system prompt template** is a saved, reusable system prompt that can be attached to any voice in a composition. Instead of retyping the same prompt in every voice configuration, create it once and attach it wherever you need it.

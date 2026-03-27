@@ -2,6 +2,7 @@
 title: "Compositions"
 weight: 80
 description: "Create and manage compositions — named, reusable sets of voices for launching consistent multi-voice sessions in Polyphon."
+aliases: ["/docs/compositions/"]
 ---
 
 A **composition** is a saved, named configuration of voices. Create one to quickly launch consistent multi-voice sessions without reconfiguring voices each time.

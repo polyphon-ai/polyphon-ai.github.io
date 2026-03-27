@@ -2,6 +2,7 @@
 title: "poly CLI"
 description: "A standalone command-line tool for controlling a running Polyphon instance from your terminal, scripts, and CI pipelines."
 weight: 14
+aliases: ["/docs/poly/"]
 ---
 
 ## Overview

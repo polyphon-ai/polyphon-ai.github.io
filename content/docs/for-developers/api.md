@@ -2,6 +2,7 @@
 title: "TCP API Server"
 description: "Control a running Polyphon instance programmatically via its JSON-RPC 2.0 TCP server — for scripts, CI pipelines, and headless automation."
 weight: 13
+aliases: ["/docs/api/"]
 ---
 
 ## Overview

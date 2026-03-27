@@ -2,6 +2,7 @@
 title: "Tones"
 weight: 50
 description: "Use built-in tone presets or create custom tones to shape how each voice communicates in Polyphon sessions."
+aliases: ["/docs/tones/"]
 ---
 
 A **tone** is a reusable voice-behavior preset that shapes how a voice communicates — its formality, verbosity, and conversational stance. Tones let you configure voice personality separately from the system prompt, so you can mix the same role with different communication styles.

@@ -2,6 +2,7 @@
 title: "MCP Server"
 description: "Expose Polyphon as an MCP tool server so AI agents like Claude Code, Cursor, Codex CLI, and others can orchestrate multi-voice sessions programmatically."
 weight: 12
+aliases: ["/docs/mcp/"]
 ---
 
 ## What is MCP?

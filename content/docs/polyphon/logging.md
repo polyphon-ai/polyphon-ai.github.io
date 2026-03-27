@@ -2,6 +2,7 @@
 title: "Logging"
 weight: 95
 description: "View application logs, enable verbose debug logging, find the log file, and export it from Settings → Logs."
+aliases: ["/docs/logging/"]
 ---
 
 Polyphon writes diagnostic output to a single log file on disk. The **Settings → Logs** page lets you view recent entries, copy the file path, export it, and enable verbose debug logging.

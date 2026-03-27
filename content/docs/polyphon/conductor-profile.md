@@ -2,6 +2,7 @@
 title: "Conductor Profile"
 weight: 40
 description: "Set your avatar, name, pronouns, and background context so every voice in every session knows who they're talking to."
+aliases: ["/docs/conductor-profile/"]
 ---
 
 The **Conductor Profile** is information about you that Polyphon injects into the system prompt of every voice in every session. Set it once, and all your voices will know who they are talking to.

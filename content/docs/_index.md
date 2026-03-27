@@ -1,24 +1,19 @@
 ---
 title: "Documentation"
 weight: 1
-description: "Polyphon documentation — learn how to install, configure voices and compositions, and orchestrate multi-voice sessions."
-redirect_to: /docs/getting-started/
+description: "Guides and reference for Polyphon and its integrations."
 ---
 
-Welcome to the Polyphon documentation. Use the navigation to explore each topic, or start with the guides below.
+Polyphon is a desktop application for orchestrating conversations between multiple AI voices simultaneously. You send a message — every voice responds. Voices can read each other's replies and build on them, creating a genuine multi-model dialogue.
 
-- [Getting Started](./getting-started/) — download, install, and launch Polyphon for the first time, including the onboarding flow for setting your conductor profile
-- [Core Concepts](./concepts/) — understand voices, compositions, sessions, rounds, continuation policy, and broadcast vs. conductor-directed modes
-- [Settings](./settings/) — configure providers, manage tones and templates, and view app info including the About page
-- [Conductor Profile](./conductor-profile/) — upload an avatar, set your name, pronouns, and background so every voice knows who you are
-- [Tones](./tones/) — reusable voice-behavior presets, built-in and custom
-- [System Prompt Templates](./system-prompt-templates/) — save and reuse system prompts across voices and compositions
-- [Voice Providers](./providers/) — configure API keys and CLI tools for all built-in providers
-- [Compositions](./compositions/) — save and reuse multi-voice configurations, including continuation policy (None, Prompt me, Auto)
-- [Filesystem Tools](./tools/) — grant API voices access to file operations, command execution, and URL fetching, with optional sandboxing to the session working directory
-- [Sessions](./sessions/) — start conversations, send messages in broadcast or conductor-directed mode, and manage continuation rounds
-- [Custom Providers](./custom-providers/) — configure custom OpenAI-compatible endpoints (Ollama, LM Studio, vLLM)
-- [Logging](./logging/) — view app logs, enable debug logging, copy log paths, and export the debug log
-- [MCP Server](./mcp/) — expose Polyphon as an MCP tool server for Claude Code, Cursor, Codex CLI, and other AI agents
-- [TCP API Server](./api/) — JSON-RPC 2.0 TCP server for scripts, CI pipelines, and headless control of a running instance
-- [poly CLI](./poly/) — command-line tool for controlling Polyphon from your terminal or CI environment
+## Polyphon
+
+The core desktop app documentation. Start here if you're new to Polyphon. Covers installation, configuring voices and compositions, running sessions, and everything built into the app — including the `poly` CLI for controlling Polyphon from your terminal.
+
+## Integrations
+
+Guides for tools and plugins that connect to Polyphon from outside the app. Currently includes the Obsidian plugin, which brings Polyphon voices directly into your vault.
+
+## For developers
+
+Reference documentation for the protocol-level interfaces that power Polyphon's external integrations — the MCP server for AI agent access, and the TCP API for scripting and headless control.

@@ -1,25 +1,65 @@
 {{ define "main" }}
+{{ $path := .File.Path }}
+{{ $isRoot := eq $path "docs/_index.md" }}
+
+{{ if $isRoot }}
+
+{{/* ── Top-level /docs/ — sidebar + content from _index.md ── */}}
+<div class="docs-layout">
+  <aside data-pagefind-ignore class="docs-sidebar-wrap" aria-label="Documentation navigation">
+    {{ partial "docs-sidebar.html" . }}
+  </aside>
+  <div class="docs-content">
+    <button class="docs-drawer-btn" id="docs-drawer-btn" type="button" aria-expanded="false" aria-controls="docs-sidebar-overlay">
+      {{ partial "icon.html" (dict "name" "menu" "size" 16) }}
+      Navigation
+    </button>
+    <h1>{{ .Title }}</h1>
+    <article class="prose">
+      {{ .Content }}
+    </article>
+  </div>
+  <aside data-pagefind-ignore class="docs-toc-wrap" aria-label="On this page" style="visibility:hidden;"></aside>
+</div>
+
+{{ else }}
+
+{{/* ── Subsection index — redirect if redirect_to is set ── */}}
 {{ with .Params.redirect_to }}
 <meta http-equiv="refresh" content="0; url={{ . }}">
 <script>window.location.replace("{{ . }}");</script>
-<noscript><p>Redirecting to <a href="{{ . }}">Getting Started</a>…</p></noscript>
+<noscript><p>Redirecting to <a href="{{ . }}">{{ . }}</a>…</p></noscript>
 {{ else }}
-<div class="container" style="padding-top:3rem;padding-bottom:3rem;">
-  <div class="docs-index-header">
-    <h1>Documentation</h1>
-    <p>Everything you need to install, configure, and use Polyphon.</p>
+
+{{/* ── Subsection index without redirect — show sidebar + page list ── */}}
+<div class="docs-layout">
+  <aside data-pagefind-ignore class="docs-sidebar-wrap" aria-label="Documentation navigation">
+    {{ partial "docs-sidebar.html" . }}
+  </aside>
+  <div class="docs-content">
+    <button class="docs-drawer-btn" id="docs-drawer-btn" type="button" aria-expanded="false" aria-controls="docs-sidebar-overlay">
+      {{ partial "icon.html" (dict "name" "menu" "size" 16) }}
+      Navigation
+    </button>
+    <h1>{{ .Title }}</h1>
+    <div class="docs-cards-grid" style="margin-top:1.5rem;">
+      {{ range .Pages.ByWeight }}
+      <a class="card-base doc-card" href="{{ .RelPermalink }}">
+        <h3>{{ .Title }} {{ partial "icon.html" (dict "name" "chevron-right" "size" 14) }}</h3>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      </a>
+      {{ end }}
+      {{ range .Sections.ByWeight }}
+      <a class="card-base doc-card" href="{{ .RelPermalink }}">
+        <h3>{{ .Title }} {{ partial "icon.html" (dict "name" "chevron-right" "size" 14) }}</h3>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      </a>
+      {{ end }}
+    </div>
   </div>
-  <div class="docs-cards-grid">
-    {{ range .Pages.ByWeight }}
-    <a class="card-base doc-card" href="{{ .RelPermalink }}">
-      <h3>
-        {{ .Title }}
-        {{ partial "icon.html" (dict "name" "chevron-right" "size" 14) }}
-      </h3>
-      {{ with .Description }}<p>{{ . }}</p>{{ end }}
-    </a>
-    {{ end }}
-  </div>
+  <aside data-pagefind-ignore class="docs-toc-wrap" aria-label="On this page" style="visibility:hidden;"></aside>
 </div>
+
+{{ end }}
 {{ end }}
 {{ end }}
