@@ -66,7 +66,7 @@ If you haven't tried Polyphon:
 
 **[Download Polyphon](https://polyphon.ai/#download)** — macOS, free.
 
-If you already use it, [star the repo](https://github.com/polyphon-ai/polyphon) — it helps other people find the project. If you've hit something broken or want to push on the product direction, [open an issue](https://github.com/polyphon-ai/polyphon/issues). If you want to talk through how you're using it or what you'd want it to do, [join the discussion](https://github.com/polyphon-ai/polyphon/discussions).
+If you already use it, [star the repo](https://github.com/polyphon-ai/polyphon) — it helps other people find the project. If you've hit something broken or want to push on the product direction, [open an issue](https://github.com/polyphon-ai/polyphon/issues). If you want to talk through how you're using it or what you'd want it to do, [join the discussion](https://github.com/polyphon-ai/.github/discussions).
 
 The source is there. The license is permissive. The roadmap is public. What gets built from here is something I'd rather figure out in the open.
 

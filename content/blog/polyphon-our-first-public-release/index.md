@@ -80,7 +80,7 @@ Polyphon is free. Period. No subscriptions, no accounts, no credit card required
 Get started with the **[documentation](/docs/)** — it covers installation, configuring your first voices, and starting your first session.
 
 - Find a bug or have an idea? **[Open an issue](https://github.com/polyphon-ai/polyphon/issues)**
-- Want to talk through how you're using it? **[Join GitHub Discussions](https://github.com/polyphon-ai/polyphon/discussions)**
+- Want to talk through how you're using it? **[Join GitHub Discussions](https://github.com/polyphon-ai/.github/discussions)**
 
 This is version one of something we're just getting started with. We're glad you're here.
 
