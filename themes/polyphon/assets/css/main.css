@@ -41,6 +41,9 @@
   --integration-obsidian:        oklch(52% 0.19 290);
   --integration-obsidian-subtle: oklch(94% 0.04 290);
   --integration-obsidian-bg:     oklch(20% 0.06 290);
+  --integration-vscode:          oklch(55% 0.17 245);
+  --integration-vscode-subtle:   oklch(95% 0.04 245);
+  --integration-vscode-bg:       oklch(20% 0.06 245);
   --radius-sm:   0.375rem;
   --radius-md:   0.5rem;
   --radius-lg:   0.75rem;
@@ -80,6 +83,8 @@
   /* Integration accent colors — dark overrides */
   --integration-obsidian:        oklch(68% 0.17 290);
   --integration-obsidian-subtle: oklch(22% 0.07 290);
+  --integration-vscode:          oklch(72% 0.16 245);
+  --integration-vscode-subtle:   oklch(22% 0.07 245);
 }
 
 /* ── Reduced motion ── */

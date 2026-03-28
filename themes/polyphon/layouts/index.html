@@ -707,6 +707,24 @@
           {{ partial "icon.html" (dict "name" "arrow-right" "size" 15) }}
         </div>
       </a>
+
+      <a class="integration-plug" href="/docs/integrations/vscode-polyphon/" style="--plug-color: var(--integration-vscode); --plug-subtle: var(--integration-vscode-subtle)">
+        <div class="integration-plug-icon" aria-hidden="true">
+          {{- partial "provider-logo.html" (dict "name" "vscode" "size" 28) -}}
+        </div>
+        <div class="integration-plug-body">
+          <div class="integration-plug-meta">
+            <span class="integration-plug-name">VS Code</span>
+            <span class="integration-plug-type">Extension</span>
+            <span class="integration-plug-badge">Manual install</span>
+          </div>
+          <p class="integration-plug-desc">Multi-voice AI conversations inside your editor, with full awareness of your open file, selection, and diagnostics. Connect to a running Polyphon instance without leaving VS Code.</p>
+        </div>
+        <div class="integration-plug-cta" aria-hidden="true">
+          <span>Docs</span>
+          {{ partial "icon.html" (dict "name" "arrow-right" "size" 15) }}
+        </div>
+      </a>
     </div>
   </div>
 </section>
