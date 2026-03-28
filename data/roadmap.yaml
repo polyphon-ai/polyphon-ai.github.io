@@ -16,6 +16,10 @@ items:
     release_date: 2026-03-23
     description: "Expose Polyphon as an MCP tool server. Any MCP-compatible agent — Claude Code, Cursor, Codex CLI, GitHub Copilot, Windsurf, Gemini CLI — can list compositions, create sessions, broadcast to the full ensemble, and retrieve transcripts via standard MCP tool calls. Runs over stdio with a Settings toggle to auto-start on launch."
 
+  - title: "Windows & Linux"
+    status: planned
+    description: "Polyphon is currently macOS-only. Windows and Linux support — x86_64 and arm64 — is planned, bringing the full desktop experience to all major platforms."
+
   - title: "Sync"
     status: planned
     description: "End-to-end encrypted sync of your sessions, compositions, and settings across all your devices. Your data stays private — we can't read it."
