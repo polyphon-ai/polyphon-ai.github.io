@@ -19,6 +19,7 @@ items:
   - title: "Windows & Linux"
     status: planned
     description: "Polyphon is currently macOS-only. Windows and Linux support — x86_64 and arm64 — is planned, bringing the full desktop experience to all major platforms."
+    discussion: https://github.com/polyphon-ai/.github/discussions/4
 
   - title: "Sync"
     status: planned
