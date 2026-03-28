@@ -18,9 +18,9 @@ The Polyphon extension for VS Code lets you run multi-voice AI conversations dir
 
 ## Installation
 
-### VS Code Marketplace *(coming soon)*
+### VS Code Marketplace
 
-Search for **Polyphon** in the Extensions panel (`Cmd/Ctrl+Shift+X`) or visit the VS Code Marketplace page.
+Search for **Polyphon** in the Extensions panel (`Cmd/Ctrl+Shift+X`), or install directly from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=polyphon-ai.vscode-polyphon).
 
 ### Manual installation (VSIX)
 
