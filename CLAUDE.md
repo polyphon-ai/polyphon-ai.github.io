@@ -20,7 +20,7 @@ There is no CSS build pipeline — `themes/polyphon/assets/css/main.css` is vani
 
 ```
 content/
-  _index.md               # Homepage
+  _index.md               # Homepage — frontmatter only; body is NOT rendered (homepage uses themes/polyphon/layouts/index.html)
   blog/                   # Release posts (one leaf bundle per release)
   docs/
     polyphon/             # Main app documentation
