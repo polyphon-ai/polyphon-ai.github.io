@@ -1,5 +1,7 @@
 # polyphon.ai
 
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+
 Marketing and documentation website for [Polyphon](https://polyphon.ai) — built with Hugo, deployed to GitHub Pages.
 
 ## Development
